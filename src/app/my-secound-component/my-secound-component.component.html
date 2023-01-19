@@ -1,0 +1,45 @@
+<button (click)="refresh()" class="btn btn-info">Refresh</button>
+<table class="table table-striped">
+	<input
+    type="text"
+    class="form-control"
+    id="search-input"
+    [(ngModel)]="searchText" placeholder="search"
+  />
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">First Name</th>
+			<th scope="col">Last Name</th>
+			<th scope="col">Job Title Name</th>
+      <th scope="col"> Phone Number</th>
+	</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let item of employsRecords.Employees">
+			<th scope="row">{{ item.userId }}</th>
+			<td>
+				{{ item.firstName }}
+			</td>
+			<td>{{ item.lastName }}</td>
+			<td>{{ item.jobTitleName }}</td>
+      		<td>{{item.phoneNumber}}</td>
+		</tr>
+	</tbody>
+</table>
+
+<div class="d-flex justify-content-between p-2">
+	<!-- <ngb-pagination
+		[collectionSize]="collectionSize"
+		[(page)]="page"
+		[pageSize]="pageSize"
+		(pageChange)="refreshCountries()"
+	> 
+	</ngb-pagination>-->
+
+	<!-- <select class="form-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCountries()">
+		<option [ngValue]="2">2 items per page</option>
+		<option [ngValue]="4">4 items per page</option>
+		<option [ngValue]="6">6 items per page</option>
+	</select> -->
+</div>
